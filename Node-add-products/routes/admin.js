@@ -1,15 +1,17 @@
 const path = require("path");
 
 const express = require("express");
-const productsController = require("../controllers/products");
+const adminController = require("../controllers/admin");
 
 const router = express.Router();
 
 // /admin/add-product => GET
-router.get("/add-product", productsController.getAddProduct); //we dont execute getAddproduct therefore
+router.get("/add-product", adminController.getAddProduct); //we dont execute getAddproduct therefore
 //we dont write getAddProduct() we
 //pass referrence to it
 
+router.get("/products");
+
 // /admin/add-product => POST
-router.post("/add-product", productsController.postAddProduct);
+router.post("/add-product", adminController.postAddProduct);
 module.exports = router;
